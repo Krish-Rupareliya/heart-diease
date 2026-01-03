@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction - Django</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <h3>Django Application</h3>
+    
+    <form method="POST" action="/predict/">
+        {% csrf_token %}
+        <p>
+            <label>Age:</label><br>
+            <input type="number" name="age" required>
+        </p>
+        
+        <p>
+            <label>Chest Pain Type:</label><br>
+            <select name="chestpain" required>
+                <option value="">Select</option>
+                <option value="1">Type 1</option>
+                <option value="2">Type 2</option>
+                <option value="3">Type 3</option>
+                <option value="4">Type 4</option>
+            </select>
+        </p>
+        
+        <p>
+            <label>Blood Pressure:</label><br>
+            <input type="number" name="bp" required>
+        </p>
+        
+        <p>
+            <label>Cholesterol:</label><br>
+            <input type="number" name="cholesterol" required>
+        </p>
+        
+        <p>
+            <button type="submit">Predict</button>
+        </p>
+    </form>
+    
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>

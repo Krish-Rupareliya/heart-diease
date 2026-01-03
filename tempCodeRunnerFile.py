@@ -1,0 +1,1 @@
+df = pd.read_csv("D:\home\heart\Heart_Disease_Prediction.csv")
